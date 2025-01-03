@@ -595,6 +595,6 @@ footer {
     footer {
         padding: 20px; /* Ensure there's enough padding on smaller screens */
         position: relative; /* Make sure it doesn't overlap content */
-        margin-top: 60px; /* Adds space above the footer on smaller screens */
+        margin-top: 160px; /* Adds space above the footer on smaller screens */
     }
 }
