@@ -1,0 +1,635 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f4f3f3;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    align-items: center;
+}
+
+.navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(30, 30, 30, 0.95);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 220px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-links.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.navbar-links a {
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #a0522d;
+    color: white;
+}
+
+.hamburger-menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    transform: rotate(90deg);
+    color: #a0522d;
+}
+
+/* Navbar for larger screens */
+@media screen and (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar-links {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .navbar-links a {
+        padding: 0 15px;
+    }
+}
+
+/* Section styles */
+section {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Home Section */
+#home {
+    background: url('cafe-home.jpg') no-repeat center center / cover;
+    color: white;
+    text-align: center;
+    position: relative;
+    
+}
+
+.home-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+/* Menu Section */
+#menu {
+    background-image: url('cafe-menu.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+#menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#menu h1 {
+    font-size: 2rem;
+    margin-bottom: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+}
+
+.menu-box {
+    flex: 1 1 calc(100% - 40px);
+    max-width: 500px;
+    margin: 10px 20px;
+    padding: 15px;
+    background-color: rgba(96, 44, 4, 0.5);
+    color: white;
+    border-radius: 10px;
+}
+
+.menu-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.menu-item-details {
+    text-align: left;
+}
+
+.menu-item-details p {
+    margin: 0;
+}
+
+.menu-item-details p.price {
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .intro-box {
+        padding: 20px;
+        font-size: medium;
+    }
+
+    .menu-box {
+        flex: 1 1 calc(100% - 20px);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .menu-item img {
+        width: 30px;
+        height: 30px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures that padding and border are included in the element's total width and height */
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.left-side {
+    flex: 1;
+    background: url("about-bg.jpg") no-repeat center center/cover;
+    height: 100vh; /* Full height */
+    background-size: cover;
+    background-position: center;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8; /* Background color for the page */
+    background-image: url("about-our-cafe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Full height */
+    background-position: center;
+}
+
+.content-box {
+    background: rgb(74, 69, 69);
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #faf6f6;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #edeaea;
+}
+
+
+/* Additional styling for the page as before */
+
+/* Ensure that both sides cover the full height of the screen */
+.left-side, .right-side {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.left-side, .right-side {
+padding: 0;
+margin: 0;
+object-fit: cover;
+}
+
+.left-side {
+background-image: url("about-bg.jpg");
+}
+
+.right-side {
+background-image: url("about-our-cafe.jpg");
+}
+/* General contact section styles */
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh; /* Full page height */
+            padding: 0;
+            flex-direction: column;
+        }
+
+        /* Container for both sections */
+        .contact-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* Left Section: Contact Details */
+        .contact-left {
+            width: 100%;
+            background-image: url("contact-bg.jpg"); /* Background image for left section */
+            background-size: cover;
+            background-position: center;
+            color: rgb(5, 5, 5); /* Text color for the left section */
+            padding: 70px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        /* Wrapper for the contact text with transparent white box */
+        .contact-left .contact-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+            padding: 70px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for the box */
+        }
+
+        .contact-left h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .contact-left p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        /* Right Section: Contact Form */
+        .contact-right {
+            width: 100%;
+            background-image: url("about-chai.jpg"); /* Background image for right section */
+            background-size: cover;
+            background-position: center;
+            padding: 80px;
+            box-sizing: border-box;
+        }
+
+        /* Form styles */
+        .contact-form {
+            background-color: rgba(139, 69, 19, 0.6); /* Transparent brown background */
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Submit button style */
+        button {
+            padding: 10px 20px;
+            background-color: rgba(139, 69, 19, 0.6); /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color:rgba(139, 69, 19, 0.1);
+        }
+
+        /* Style for Open Maps button */
+        .open-maps-btn {
+            margin-top: 20px;
+            padding: 12px 0px;
+            background-color: #007BFF; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: block; /* Ensures the button is on a new line */
+            width: 100%; /* Ensures it takes the full width of the container */
+            text-decoration: none;
+        }
+
+        .open-maps-btn:hover {
+            background-color: #0056b3;
+        }
+        
+
+        /* Navbar */
+        /* Navbar */
+        /* Navbar */
+.navbar {
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+}
+.navbar button {
+    margin-left: 0px;
+    margin-right: 1900px;
+}
+
+
+
+
+/* Rest of your styles */
+
+        /* Navbar for larger screens */
+        @media screen and (min-width: 768px) {
+            .contact-left,
+            .contact-right {
+                width: 50%; /* For larger screens, display sections side by side */
+            }
+
+            .contact-container {
+                flex-direction: row; /* Display in row layout */
+            }
+        }
+
+        /* Navbar for smaller screens */
+        @media screen and (max-width: 767px) {
+            .contact-left,
+            .contact-right {
+                width: 100%; /* Make sections take full width */
+                padding: 20px; /* Reduce padding for small screens */
+            }
+
+            .contact-container {
+                flex-direction: column; /* Stack sections vertically */
+            }
+        }
+        
+
+.navbar {
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* For mobile devices, adjust the layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+    }
+
+    .content-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto; /* Remove full height on mobile */
+    }
+
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+/* General Footer Styling */
+#footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Ensure full width */
+}
+
+/* Footer Text */
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Footer Links */
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 768px) {
+    #footer {
+        padding: 15px;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+
+    .footer-content a {
+        font-size: 0.9rem;
+        margin: 0 8px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    #footer {
+        padding: 10px;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+
+    .footer-content a {
+        font-size: 0.85rem;
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Ensure Footer is at the Bottom of the Page on Small Screens */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content Section */
+main {
+    flex-grow: 1;
+}
