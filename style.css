@@ -579,19 +579,22 @@ main {
 }
 
 /* Footer styles */
+/* Footer Styles */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0; /* Increased padding for better spacing */
     text-align: center;
     width: 100%;
-    position: bottom; /* Keeps footer position normal for small screens */
+    position: relative; /* Makes footer stay at the bottom in small screens */
+    bottom: 0;
 }
 
-/* Responsive footer adjustment on small screens */
+/* Responsive footer adjustment for small screens */
 @media (max-width: 768px) {
     footer {
-        padding: 10px;
-        position: relative;
+        padding: 20px; /* Ensure there's enough padding on smaller screens */
+        position: relative; /* Make sure it doesn't overlap content */
+        margin-top: 30px; /* Adds space above the footer on smaller screens */
     }
 }
