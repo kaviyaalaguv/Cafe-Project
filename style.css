@@ -598,32 +598,3 @@ footer {
         margin-top: 160px; /* Adds space above the footer on smaller screens */
     }
 }
-/* Ensure the content and footer don't overlap on small screens */
-@media (max-width: 767px) {
-    /* Add padding to the bottom of the contact section to avoid footer overlap */
-    .contact-section {
-        padding-bottom: 80px; /* Add enough space for the footer */
-    }
-
-    /* Adjust the form and content box layout for smaller screens */
-    .contact-container {
-        display: block;
-        padding: 20px;
-    }
-
-    .contact-left, .contact-right {
-        width: 100%; /* Make sure both sections are full width */
-        margin-bottom: 20px; /* Add spacing between the sections */
-    }
-
-    /* Make sure footer is positioned at the bottom */
-    #footer {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        background-color: #333;
-        color: white;
-        bottom: 0;
-    }
-}
