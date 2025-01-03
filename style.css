@@ -620,6 +620,6 @@ footer {
     }
 
     footer {
-        margin-top: 100px;  /* Ensures footer stays at the bottom */
+        margin-top: 500px;  /* Ensures footer stays at the bottom */
     }
 }
