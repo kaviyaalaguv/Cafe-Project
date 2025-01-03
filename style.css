@@ -578,23 +578,47 @@ main {
     flex: 1;
 }
 
-/* Footer styles */
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0; /* Increased padding for better spacing */
-    text-align: center;
-    width: 100%;
-    position: relative; /* Makes footer stay at the bottom in small screens */
-    bottom: 0;
-}
+        #footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-/* Responsive footer adjustment for small screens */
-@media (max-width: 768px) {
-    footer {
-        padding: 20px; /* Ensure there's enough padding on smaller screens */
-        position: relative; /* Make sure it doesn't overlap content */
-        margin-top: 160px; /* Adds space above the footer on smaller screens */
-    }
-}
+        #footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+        }
+
+        /* Responsive footer for smaller screens */
+        @media (max-width: 768px) {
+            #footer {
+                padding: 15px 0;
+            }
+
+            .footer-content {
+                padding: 0 10px;
+            }
+
+            #footer p {
+                font-size: 14px;
+            }
+
+            #footer a {
+                margin: 0 5px;
+            }
+        }
