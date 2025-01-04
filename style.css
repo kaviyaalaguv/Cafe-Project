@@ -589,7 +589,7 @@ main {
     flex: 1;
 }
 main {
-    margin-bottom: 50px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
 }
 
 /* Footer styles */
@@ -608,6 +608,6 @@ footer {
     footer {
         padding: 20px; /* Ensure there's enough padding on smaller screens */
         position: relative; /* Make sure it doesn't overlap content */
-        margin-top: 500px; /* Adds space above the footer on smaller screens */
+        margin-top: 591px; /* Adds space above the footer on smaller screens */
     }
 }
