@@ -606,8 +606,8 @@ footer {
 /* Responsive footer adjustment for small screens */
 @media (max-width: 768px) {
     footer {
-        padding: 80px; /* Ensure there's enough padding on smaller screens */
+        padding: 0px; /* Ensure there's enough padding on smaller screens */
         position: relative; /* Make sure it doesn't overlap content */
-        margin-top: 500px; /* Adds space above the footer on smaller screens */
+        margin-top: 0px; /* Adds space above the footer on smaller screens */
     }
 }
