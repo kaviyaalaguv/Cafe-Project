@@ -596,7 +596,7 @@ main {
 /* Footer Styles */
 footer {
     color: black;
-    padding: 0px 0; /* Increased padding for better spacing */
+    padding: 10px 0; /* Increased padding for better spacing */
     text-align: center;
     width: 100%;
     position: relative; /* Makes footer stay at the bottom in small screens */
@@ -606,8 +606,8 @@ footer {
 /* Responsive footer adjustment for small screens */
 @media (max-width: 768px) {
     footer {
-        padding: 0px; /* Ensure there's enough padding on smaller screens */
+        padding: 10px 0; /* Ensure there's enough padding on smaller screens */
         position: relative; /* Make sure it doesn't overlap content */
-        margin-top: 0px; /* Adds space above the footer on smaller screens */
+        margin-top: auto; /* Adds space above the footer on smaller screens */
     }
 }
